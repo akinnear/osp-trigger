@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.channel.DirectChannel;
-import org.springframework.integration.config.EnableIntegration;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.ip.udp.UnicastReceivingChannelAdapter;
@@ -28,12 +27,7 @@ public class IntegrationConfiguration {
 
     @Bean
     public GenericTransformer<?,?> udpMsgTransformer() {
-        return new ObjectToStringTransformer() {
-            @Override
-            protected String transformPayload(Object payload) throws Exception {
-                return super.transformPayload(payload);
-            }
-        };
+        return new ObjectToStringTransformer();
     }
 
     @Bean
