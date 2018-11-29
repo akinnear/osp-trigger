@@ -13,7 +13,6 @@ import org.springframework.integration.transformer.ObjectToStringTransformer;
 import org.springframework.messaging.MessageChannel;
 
 @Configuration
-@EnableIntegration
 public class IntegrationConfiguration {
     @Bean
     public IntegrationFlow handleUdpMsg(
